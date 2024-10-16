@@ -49,8 +49,10 @@ def start_flask_server():
         key = request.args.get('key')
         if key == 'AD050845':
             return "AD050845 || SQB55A67EDEA116B"
+        if key == '12345678':
+            return "12345678 || SQ7F8EF8ED8D11B8"
     context = ('cert.pem', 'key.pem')
-    app.run(host="127.0.0.1", port=443,ssl_context=context)
+    app.run(host="127.0.0.1",port=443, ssl_context=context)
 
 def main():
     domain = "siguojunqi.top"
