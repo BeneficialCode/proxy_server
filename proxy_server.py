@@ -53,7 +53,13 @@ def start_flask_server():
             return "12345678 || SQ7F8EF8ED8D11B8"
         if key == '87654321':
             return "87654321 || SQ7613EB4621584B"
-    context = ('cert.pem', 'key.pem')
+    
+    # 获取当前所在目录
+    cur_path = os.path.dirname(os.path.realpath(__file__))
+    # 证书文件
+    cert_path = os.path.join(cur_path, 'cert.pem')
+    key_path = os.path.join(cur_path, 'key.pem')
+    context = (cert_path, key_path)
     app.run(host="127.0.0.1",port=443, ssl_context=context)
 
 def main():
